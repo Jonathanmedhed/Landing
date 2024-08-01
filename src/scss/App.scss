@@ -1,0 +1,133 @@
+@import "config";
+@import "utilities";
+@import "./components/cards";
+@import "./components/cat-pop-up";
+@import "./components/footer";
+@import "./components/header";
+@import "./components/icon";
+@import "./components/input-switch";
+@import "./pages/landing";
+@import "./components/loading";
+@import "./components/line";
+@import "./components/section";
+/** Main Config */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  color: #333;
+  // Scrollbar
+  scrollbar-width: thin;
+  scrollbar-color: $primary-color $white-color;
+  min-height: 100vh;
+  width: 100vw;
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $white-dark-color;
+    border-radius: 0.2rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary-color;
+    border-radius: 6px;
+    border: 1px solid $white-color;
+  }
+}
+a {
+  text-decoration: none; //remove underline
+  cursor: pointer;
+}
+ul {
+  list-style: none; //remove bullet points
+}
+img {
+  width: 100%; //take full width of container
+}
+
+input,
+select,
+textarea {
+  border: solid 2px $primary-color;
+  border-radius: 0.2rem;
+  padding: 0.2rem;
+}
+
+.--hide {
+  display: none;
+}
+
+.link-component {
+  border: solid 2px green;
+  z-index: 1000;
+  a,
+  span {
+    min-height: 100%;
+    border: solid 2px red;
+    z-index: 2;
+  }
+}
+
+/*****************************************************************************************************
+* Display 
+*****************************************************************************************************/
+
+.--show {
+  &-md,
+  &-md-up,
+  &-lg {
+    display: none;
+  }
+}
+
+@media (min-width: $width-md) {
+  .--show {
+    &-md {
+      display: flex;
+    }
+    &-md-up {
+      display: flex;
+    }
+    &-lg {
+      display: none;
+    }
+    &-sm {
+      display: none;
+    }
+  }
+}
+@media (min-width: $width-lg) {
+  .--show {
+    &-md {
+      display: none;
+    }
+    &-md-up {
+      display: flex;
+    }
+    &-lg {
+      display: flex;
+    }
+    &-sm {
+      display: none;
+    }
+  }
+}
+
+.imgToLoad {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+}
+
+/*****************************************************************************************************
+* Landings 
+*****************************************************************************************************/

@@ -1,0 +1,271 @@
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  .card {
+    padding: 1rem 1rem 1rem 1rem;
+    .card__top {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      img {
+        height: 2rem;
+        padding-right: 0.5rem;
+      }
+    }
+    .card__bot {
+      padding-top: 0.5rem;
+      color: $gray-dark-color;
+      font-weight: bold;
+    }
+  }
+  /**************************** Colored Type *****************************/
+
+  &.--four-colored {
+    position: relative;
+    justify-content: center;
+    //max-height: 50rem;
+    .card {
+      position: relative;
+      padding: 5rem 1rem 5rem 1rem;
+      clip-path: polygon(0 20%, 100% 0, 100% 80%, 0% 100%);
+      background-color: $white-color;
+      -moz-box-shadow: 6px 6px 12px #888;
+      -webkit-box-shadow: 6px 6px 12px #888;
+      box-shadow: 6px 6px 12px #888;
+      &:nth-child(1) {
+        padding: 2rem 1rem 5rem 1rem;
+        background-color: $purple-color;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+        .card__top {
+          .card__img {
+            img {
+              padding-right: 3rem;
+            }
+          }
+        }
+      }
+      &:nth-child(2) {
+        top: -5rem;
+        background-color: $magenta-color;
+      }
+      &:nth-child(3) {
+        top: -10rem;
+        background-color: $green-color;
+      }
+      &:nth-child(4) {
+        top: -15rem;
+        padding: 5rem 1rem 2rem 1rem;
+        background-color: $blue-color;
+        clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+      }
+    }
+    .card {
+      .card__top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        .card__img {
+          display: flex;
+          flex-direction: row;
+          justify-content: baseline;
+          clip-path: polygon(0 0, 100% 0, 100% 66%, 0 100%);
+          img {
+            height: 4rem;
+            padding-right: 1rem;
+          }
+        }
+        h3 {
+          color: $white-color;
+        }
+      }
+
+      .card__bot {
+        p {
+          text-align: left;
+          color: $white-color;
+        }
+      }
+    }
+  }
+  /**************************** Colored Type End *****************************/
+}
+
+@media (max-width: 480px) {
+  .cards {
+    &.--four-colored {
+      max-height: 65rem;
+    }
+  }
+}
+
+@media (min-width: $width-md) {
+  .cards {
+    justify-content: space-evenly;
+    .card {
+      width: 20rem;
+      .card__top {
+        flex-direction: column;
+        align-items: center;
+        img {
+          height: 5rem;
+          padding-right: 0;
+        }
+      }
+      .card__bot {
+        padding-top: 1rem;
+        text-align: center;
+      }
+    }
+
+    &.--four-colored {
+      max-height: unset;
+      max-width: 50rem;
+      margin: 0 auto 10rem auto;
+      .card {
+        padding: 0;
+        .card__top {
+          display: flex;
+          flex-direction: column;
+          align-items: baseline;
+          background-color: $white-color;
+          .card__img {
+            width: 100%;
+            img {
+              width: 5rem;
+              margin: 1rem 0 2rem 1.5rem;
+            }
+          }
+          h3 {
+            padding-left: 1.5rem;
+            margin-top: 0.8rem;
+            color: $font-color;
+          }
+        }
+        .card__bot {
+          p {
+            color: $gray-dark-color;
+            padding: 0 1.5rem 2.5rem 1.5rem;
+          }
+        }
+        &:nth-child(1) {
+          padding: 0;
+          background-color: $white-color;
+          clip-path: unset;
+          .card__top {
+            .card__img {
+              background-color: $purple-color;
+            }
+          }
+        }
+        &:nth-child(2) {
+          background-color: $white-color;
+          clip-path: unset;
+          top: 2rem;
+          left: -2rem;
+          .card__top {
+            .card__img {
+              background-color: $magenta-color;
+            }
+          }
+        }
+        &:nth-child(3) {
+          background-color: $white-color;
+          clip-path: unset;
+          top: 4rem;
+          left: 0;
+          .card__top {
+            .card__img {
+              background-color: $green-color;
+            }
+          }
+        }
+        &:nth-child(4) {
+          padding: 0;
+          background-color: $white-color;
+          clip-path: unset;
+          top: 6rem;
+          left: -2rem;
+          .card__top {
+            .card__img {
+              background-color: $blue-color;
+            }
+          }
+        }
+      }
+      &.--left {
+        .card__top {
+          .card__img {
+            img {
+              position: relative;
+              left: -1.4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cards.--four-colored.--bg-blue {
+    background-color: $white-color;
+  }
+}
+
+@media (min-width: 800px) {
+  .cards {
+    &.--four-colored {
+      .card {
+        .card__bot {
+          p {
+            color: $gray-dark-color;
+            padding: 0 1.5rem 1.5rem 1.5rem;
+          }
+        }
+        &:nth-child(1) {
+          left: 0;
+        }
+        &:nth-child(2) {
+          top: 2rem;
+          left: -2rem;
+        }
+        &:nth-child(3) {
+          top: 4rem;
+          left: 0;
+        }
+        &:nth-child(4) {
+          top: 6rem;
+          left: -2rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1450px) {
+  .cards {
+    &.--four-colored {
+      max-width: unset;
+      left: 5rem;
+      flex-wrap: nowrap;
+      .card {
+        &:nth-child(1) {
+          left: 0;
+        }
+        &:nth-child(2) {
+          top: 2rem;
+          left: -2rem;
+        }
+        &:nth-child(3) {
+          top: 4rem;
+          left: -4rem;
+        }
+        &:nth-child(4) {
+          top: 6rem;
+          left: -8rem;
+        }
+      }
+    }
+  }
+}

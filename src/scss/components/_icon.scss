@@ -1,0 +1,35 @@
+.icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  .icon__img {
+    cursor: pointer;
+    &:active {
+      opacity: 0.8;
+    }
+  }
+  .icon__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    font-weight: bold;
+    color: $white-color;
+    background-color: $purple-color;
+    border-radius: 0.5rem;
+  }
+  .icon__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .icon__copy {
+      width: 2rem;
+      margin-left: 0.2rem;
+      cursor: pointer;
+      &:active {
+        opacity: 0.5;
+      }
+    }
+  }
+}

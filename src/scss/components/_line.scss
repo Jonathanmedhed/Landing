@@ -1,0 +1,41 @@
+.line {
+  display: flex;
+  min-height: 0.3rem;
+  $lengths: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+  border-radius: 1rem;
+  @each $length in $lengths {
+    &.--line-#{$length} {
+      width: #{$length}rem;
+    }
+    &.--line-#{$length} {
+      width: #{$length}rem;
+    }
+    &.--line-#{$length} {
+      width: #{$length}rem;
+    }
+    &.--line-#{$length} {
+      width: #{$length}rem;
+    }
+    &.--line-#{$length} {
+      width: #{$length}rem;
+    }
+    &.--line-#{$length} {
+      width: #{$length}rem;
+    }
+    &.--line-#{$length} {
+      width: #{$length}rem;
+    }
+  }
+  &.--line-100 {
+    width: 100%;
+  }
+  &.--line-75 {
+    width: 75%;
+  }
+  &.--line-50 {
+    width: 50%;
+  }
+  &.--line-25 {
+    width: 25%;
+  }
+}
