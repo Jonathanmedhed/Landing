@@ -67,12 +67,10 @@ textarea {
 }
 
 .link-component {
-  border: solid 2px green;
   z-index: 1000;
   a,
   span {
     min-height: 100%;
-    border: solid 2px red;
     z-index: 2;
   }
 }
