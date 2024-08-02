@@ -253,5 +253,18 @@
         }
       }
     }
+    .bg-xl {
+      top: 0;
+      right: 0;
+      position: absolute;
+      min-width: 100vh;
+      height: 100vh;
+      border: solid 2px red;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url("../images/second-bg-md-cliped.jpg");
+      background-repeat: no-repeat;
+
+      clip-path: polygon(41% 0, 100% 0, 100% 100%, 21% 100%);
+    }
   }
 }

@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import ImageComponent from "./ImageComponent";
+import { LanguageSwitch } from "./LanguageSwitch";
 import menuIcon from "../images/menu.svg";
 
-export const Header = ({ className, centerItem, icon, options, title }) => {
+export const Header = ({
+  action,
+  className,
+  centerItem,
+  icon,
+  options,
+  title,
+}) => {
   const [isShowMenu, setIsShowMenu] = useState(false);
   let menu = options && (
     <span className="header__menu">
@@ -29,17 +37,25 @@ export const Header = ({ className, centerItem, icon, options, title }) => {
         <span className={`header__switch ${isShowMenu ? "--hide" : ""}`}>
           {centerItem}
         </span>
-        <div className="header__right">{menu && menu}</div>
-        <span
-          className="header__md"
-          onClick={() => setIsShowMenu(!isShowMenu)}
-          onKeyDown={() => setIsShowMenu(!isShowMenu)}
-          tabIndex={0}
-        >
-          <ImageComponent alt="menu" className="menu-icon" src={menuIcon} />
-        </span>
+        <div className="">
+          {menu ? (
+            menu
+          ) : (
+            <LanguageSwitch active={true} onClick={() => action()} />
+          )}
+        </div>
+        {menu && (
+          <span
+            className="header__md"
+            onClick={() => setIsShowMenu(!isShowMenu)}
+            onKeyDown={() => setIsShowMenu(!isShowMenu)}
+            tabIndex={0}
+          >
+            <ImageComponent alt="menu" className="menu-icon" src={menuIcon} />
+          </span>
+        )}
       </div>
-      {isShowMenu && (
+      {/**isShowMenu && (
         <span className={`header__menu-drop ${isShowMenu ? "--active" : ""}`}>
           {isShowMenu &&
             options.map((option, i) => (
@@ -54,7 +70,7 @@ export const Header = ({ className, centerItem, icon, options, title }) => {
               </span>
             ))}
         </span>
-      )}
+      )*/}
     </header>
   );
 };

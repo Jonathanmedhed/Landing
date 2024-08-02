@@ -6,7 +6,6 @@ import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Hover } from "../components/Hover";
 import { Icon } from "../components/Icon";
-import { LanguageSwitch } from "../components/LanguageSwitch";
 import ImageComponent from "../components/ImageComponent";
 import { Section } from "../components/Section";
 import awsImg from "../images/aws.svg";
@@ -18,7 +17,7 @@ import expressImg from "../images/express.svg";
 import gitImg from "../images/git.svg";
 import gmailImg from "../images/gmail.svg";
 import herokuImg from "../images/heroku.png";
-import logo from "../images/letter.svg";
+import codeIcon from "../images/code.svg";
 import linkedImg from "../images/linkedin.svg";
 import mongoImg from "../images/mongo.svg";
 import nodeImg from "../images/node.svg";
@@ -38,13 +37,14 @@ export const MainLanding = () => {
     { nationality: "en", img: catBrit },
     { nationality: "es", img: catMex },
   ];
-
+  /**
   const options = [
     { label: "Landing 1", action: () => console.log("Landing 1") },
     { label: "Landing 2", action: () => console.log("Landing 2") },
     { label: "Landing 3", action: () => console.log("Landing 3") },
     { label: "Landing 4", action: () => console.log("Landing 4") },
   ];
+   */
 
   /*********************** 1st Section *****************************************/
   const leftContent1 = (
@@ -183,7 +183,11 @@ export const MainLanding = () => {
   const rightContent4 = (
     <>
       <span className="img-right">
-        <ImageComponent alt="right-img" className="right-img" src={rightImg} />,
+        <ImageComponent
+          alt="right-img"
+          className="right-img --hide-xl"
+          src={rightImg}
+        />
       </span>
     </>
   );
@@ -221,12 +225,12 @@ export const MainLanding = () => {
   return (
     <div className="main-landing">
       <Header
+        action={() => setShowCat(true)}
         className={``}
-        centerItem={
-          <LanguageSwitch active={true} onClick={() => setShowCat(true)} />
+        icon={
+          <ImageComponent alt="icon" className="letter-icon" src={codeIcon} />
         }
-        icon={<ImageComponent alt="icon" className="letter-icon" src={logo} />}
-        options={options}
+        //options={options}
         title={t("global.p0rtf0lio")}
       />
       <Section
@@ -252,12 +256,13 @@ export const MainLanding = () => {
       <Section className="colored-section --pt-2" contentLeft={leftContent3} />
 
       <div className="shaped --bg-white">
-        <div className="shaped__content --bg-white-dark">
+        <div className="shaped__content --bg-white-dark --relative">
           <Section
             className="section__img-r --bg-white-dark"
             contentLeft={leftContent4}
             contentRight={rightContent4}
           />
+          <div className="bg-xl"></div>
         </div>
       </div>
       <div className="main-landing__titles no-section">

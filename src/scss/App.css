@@ -5929,6 +5929,18 @@ input:checked + .slider-simple:before {
     -webkit-clip-path: polygon(0 21%, 100% 0, 100% 61%, 0 81);
             clip-path: polygon(0 21%, 100% 0, 100% 61%, 0 81);
   }
+  .main-landing .bg-xl {
+    top: 0;
+    right: 0;
+    position: absolute;
+    min-width: 100vh;
+    height: 100vh;
+    border: solid 2px red;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../images/second-bg-md-cliped.jpg");
+    background-repeat: no-repeat;
+    -webkit-clip-path: polygon(41% 0, 100% 0, 100% 100%, 21% 100%);
+            clip-path: polygon(41% 0, 100% 0, 100% 100%, 21% 100%);
+  }
 }
 
 .loading {
@@ -6425,7 +6437,7 @@ textarea {
 /*****************************************************************************************************
 * Display 
 *****************************************************************************************************/
-.--show-md, .--show-md-up, .--show-lg {
+.--show-sm-md, .--show-sm-md-up, .--show-sm-lg {
   display: none;
 }
 
@@ -6457,6 +6469,11 @@ textarea {
     display: none;
   }
 }
+@media (min-width: 1600px) {
+  .--hide-xl {
+    display: none;
+  }
+}
 .imgToLoad {
   width: 0px;
   height: 0px;
@@ -6464,5 +6481,8 @@ textarea {
 }
 
 /*****************************************************************************************************
-* Landings 
-*****************************************************************************************************//*# sourceMappingURL=App.css.map */
+* Position 
+*****************************************************************************************************/
+.--relative {
+  position: relative;
+}/*# sourceMappingURL=App.css.map */
